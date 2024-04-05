@@ -1,0 +1,8 @@
+{% extends 'my_app/base.html' %}
+{% block body_block %}
+<h3>Delete {{ musician.name }}?</h3>
+<form method="POST" action="{% url 'my_app:delete_musician' pk=musician.pk %}">
+    {% csrf_token %}
+    <a href="{%url 'musician_update' pk=musician.pk %}">Update</a>
+</form>
+{% endblock %}
